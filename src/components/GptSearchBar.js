@@ -52,26 +52,52 @@ const GptSearchBar = () => {
     );
   };
 
-  return (
-    <div className="pt-[35%] md:p-0 flex justify-center">
-      <form
-        className="md:w-full w-full bg-black grid grid-cols-12"
-        onSubmit={(e) => e.preventDefault()}
+ return (
+  <div className="min-h-screen flex items-center justify-center px-4 md:px-0">
+    <form
+      className="w-full max-w-2xl bg-black grid grid-cols-12"
+      onSubmit={(e) => e.preventDefault()}
+    >
+      <input
+        ref={searchText}
+        type="text"
+        className="p-4 m-4 col-span-8 md:col-span-9"
+        placeholder={lang[langKey].gptSearchPlaceHolder}
+      />
+      <button
+        className="m-4 py-2 px-4 bg-red-700 text-white rounded-lg col-span-4 md:col-span-3"
+        onClick={handleGptSearchClick}
       >
-        <input
-          ref={searchText}
-          type="text"
-          className=" p-4 m-4 col-span-9"
-          placeholder={lang[langKey].gptSearchPlaceHolder}
-        />
-        <button
-          className="col-span-3 m-4 py-2 px-4 bg-red-700 text-white rounded-lg"
-          onClick={handleGptSearchClick}
-        >
-          {lang[langKey].search}
-        </button>
-      </form>
-    </div>
-  );
-};
+        {lang[langKey].search}
+      </button>
+    </form>
+  </div>
+);
+}
 export default GptSearchBar;
+
+/**
+ * 
+ * return (
+  <div className="flex justify-center px-4 md:px-0 pt-32 md:pt-10">
+    <form
+      className="w-full max-w-2xl bg-black grid grid-cols-12"
+      onSubmit={(e) => e.preventDefault()}
+    >
+      <input
+        ref={searchText}
+        type="text"
+        className="p-4 m-4 col-span-8 md:col-span-9"
+        placeholder={lang[langKey].gptSearchPlaceHolder}
+      />
+      <button
+        className="m-4 py-2 px-4 bg-red-700 text-white rounded-lg col-span-4 md:col-span-3"
+        onClick={handleGptSearchClick}
+      >
+        {lang[langKey].search}
+      </button>
+    </form>
+  </div>
+);
+
+ */
