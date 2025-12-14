@@ -8,6 +8,7 @@ import { addGptMovieResult } from "../utils/gptSlice";
 const GptSearchBar = () => {
   const dispatch = useDispatch();
   const langKey = useSelector((store) => store.config.lang);
+ 
   const searchText = useRef(null);
 
   // search movie in TMDB
@@ -52,16 +53,16 @@ const GptSearchBar = () => {
   };
 
   return (
-    <div className="pt-[35%] md:pt-[10%] flex justify-center">
+    <div className="pt-[35%] md:p-0 flex justify-center">
       <form
-        className="w-full md:w-1/2 bg-black grid grid-cols-12"
+        className="md:w-full w-full bg-black grid grid-cols-12"
         onSubmit={(e) => e.preventDefault()}
       >
         <input
           ref={searchText}
           type="text"
           className=" p-4 m-4 col-span-9"
-          placeholder={lang[langKey].gptSearchPlaceholder}
+          placeholder={lang[langKey].gptSearchPlaceHolder}
         />
         <button
           className="col-span-3 m-4 py-2 px-4 bg-red-700 text-white rounded-lg"
