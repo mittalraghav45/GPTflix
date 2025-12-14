@@ -13,8 +13,8 @@ import { useSelector } from "react-redux";
 
 const Browse = () => {
   const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
-  console.log("TMDB key present:",process.env.REACT_APP_TMDB_KEY);
-console.log("OpenAI key present:", OPENAI_KEY);
+//   console.log("TMDB key present:",process.env.REACT_APP_TMDB_KEY);
+// console.log("OpenAI key present:", OPENAI_KEY);
 
   useNowPlayingMovies();
   useNowPopularMovies();
