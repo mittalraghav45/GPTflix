@@ -4,17 +4,17 @@ import { BACKGROUND_IMAGE } from "../utils/constant";
 
 const GptSearch = () => {
   return (
-    <div className="relative min-h-screen">
-      <div
-        className="fixed inset-0 -z-10 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${BACKGROUND_IMAGE})`,
-        }}
-      ></div>
-
+    <> 
+     <div className="absolute -z-10 ">
+        <img className="h-screen object-cover" src={BACKGROUND_IMAGE} alt='bg-logo'
+        />        
+      </div>
+    <div className="pt-[30%] md:p-0">
+    
       <GptSearchBar />
       <GptMovieSuggestion />
     </div>
+    </>
   );
 };
 
